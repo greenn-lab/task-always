@@ -6,13 +6,15 @@
           <v-card-title>Task Always</v-card-title>
           <v-card-subtitle>Let's join to of us</v-card-subtitle>
           <v-form
-            ref="form"
             v-model="valid"
+            ref="form"
+            @submit.prevent="ok"
+            autocomplete="off"
           >
             <v-card-text>
 
               <v-text-field
-                v-model="fields.name"
+                v-model="fields.nickname"
                 label="nickname"
                 required
                 validate-on-blur
@@ -25,7 +27,7 @@
                 label="e-mail"
                 required
                 validate-on-blur
-                :rules="[v => !/\w+@\w\.\w+/.test(v) ? 'incorrect' : true]"
+                :rules="[v => /\w+@\w+\..+/.test(v) ? true : 'incorrect']"
               />
 
               <v-text-field
@@ -47,6 +49,7 @@
 
             <v-card-actions>
               <v-btn
+                type="submit"
                 color="success"
                 large
                 :disabled="!valid"
@@ -62,13 +65,24 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
+    methods: {
+      ok() {
+        axios.post('/user/sign-up', this.fields)
+          .then(res => console.log(res))
+          .catch(err => console.log(err))
+
+        console.log('... is ok!')
+      }
+    },
     data() {
       return {
         valid: false,
         showPassword: false,
         fields: {
-          name: '',
+          nickname: '',
           email: '',
           pin: ''
         }
