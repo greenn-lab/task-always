@@ -12,7 +12,7 @@
             <v-card-text>
 
               <v-text-field
-                v-model="name"
+                v-model="fields.name"
                 label="nickname"
                 required
                 validate-on-blur
@@ -21,7 +21,7 @@
               ></v-text-field>
 
               <v-text-field
-                v-model="email"
+                v-model="fields.email"
                 label="e-mail"
                 required
                 validate-on-blur
@@ -29,7 +29,7 @@
               />
 
               <v-text-field
-                v-model="password"
+                v-model="fields.pin"
                 label="password"
                 hint="Make it difficult"
                 required
@@ -67,9 +67,11 @@
       return {
         valid: false,
         showPassword: false,
-        name: '',
-        email: '',
-        password: ''
+        fields: {
+          name: '',
+          email: '',
+          pin: ''
+        }
       }
     }
   }
