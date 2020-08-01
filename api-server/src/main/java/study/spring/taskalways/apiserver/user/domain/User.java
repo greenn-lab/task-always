@@ -16,6 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@EntityListeners(AuditsListener.class)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -31,5 +32,8 @@ public class User {
   private String nickname;
   private String email;
   private String pin;
+
+  @Embedded
+  private Audits audits;
 
 }
