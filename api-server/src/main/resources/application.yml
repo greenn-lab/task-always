@@ -1,9 +1,15 @@
 spring:
   application:
-    name: "task always"
+    name: "task-always"
 
   datasource:
     driver-class-name: org.h2.Driver
     username: "sa"
     password: ""
     url: "jdbc:h2:file:~/workspace/study/task-always/db;AUTO_SERVER=TRUE"
+
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update

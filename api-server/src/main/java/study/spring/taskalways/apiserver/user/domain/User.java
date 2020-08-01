@@ -6,8 +6,12 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import study.spring.taskalways.apiserver.support.jpa.audit.Audits;
+import study.spring.taskalways.apiserver.support.jpa.audit.AuditsListener;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
