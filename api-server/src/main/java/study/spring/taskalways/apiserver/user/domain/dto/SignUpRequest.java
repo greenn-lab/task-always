@@ -1,9 +1,6 @@
 package study.spring.taskalways.apiserver.user.domain.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import study.spring.taskalways.apiserver.user.domain.User;

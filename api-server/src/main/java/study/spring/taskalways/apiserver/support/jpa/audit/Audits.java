@@ -8,12 +8,13 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Embeddable
 @Getter
 @Setter
-public class Audits {
+public class Audits implements Serializable {
 
   @CreatedDate
   private LocalDateTime created;
