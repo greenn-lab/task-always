@@ -48,7 +48,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {},
+    "rules": {
+      "semi": ["error", "never"],
+      "quotes": ["warn", "single"]
+    },
     "overrides": [
       {
         "files": [
